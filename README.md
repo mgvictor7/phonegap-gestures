@@ -1,14 +1,3 @@
-# A Blank PhoneGap App
+# Gestures
 
-## Usage
-
-### PhoneGap CLI
-
-    $ phonegap create my-app --template blank
-
-### Desktop
-
-In your browser, open the file:
-
-    /www/index.html
-
+Aplicación Phonegap para aprender a usar gestos en el móvil usando Hammer.js
