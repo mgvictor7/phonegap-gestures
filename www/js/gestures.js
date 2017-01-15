@@ -24,8 +24,31 @@ class Gestures {
     hammer.get('pinch').set({ enable: true });
     hammer.get('rotate').set({ enable: true });
 
-    hammer.on('tap doubletap swipe press rotate', (e) => {
-      document.getElementById('info').innerHTML = e.type;
+    // hammer.on('tap doubletap swipe press rotate', (e) => {
+    //   document.getElementById('info').innerHTML = e.type;
+    // });
+    gesturesZone.addEventListener('webkitAnimationEnd', (e) => {
+      gesturesZone.className = '';
+    });
+
+    hammer.on('doubletap press swipe rotate', (e) => {
+      switch (e.type) {
+        case 'swipe':
+          if (e.direction === 2) {
+            gesturesZone.className = 'swipe-left';
+          } else if (e.direction === 4) {
+            gesturesZone.className = 'swipe-right';
+          }
+          break;
+        case 'rotate':
+          const rotation = 25;
+          if (e.distance > rotation) {
+            gesturesZone.className = e.type;
+          }
+          break;
+        default:
+          gesturesZone.className = e.type;
+      }
     });
   }
 

@@ -10,7 +10,7 @@
 .divider-color         { border-color: #BDBDBD; }*/
 
 body {
-  background: #FFC107;
+  background: #FFA000;
 }
 
 body.light {
@@ -18,11 +18,11 @@ body.light {
 }
 
 body.dark {
-  background: #FFC107;
+  background: #FFA000;
 }
 
 button {
-  background: #03A9F4;
+  background: #FFC107;
   color: #FFFFFF;
   width: 100%;
   border: 0;
@@ -33,16 +33,78 @@ button {
 
 #gestures-zone {
   width: 100%;
-  background: #03A9F4;
+  background: #FFC107;
   margin-top: 10px;
   min-height: 300px;
   display: block;
 }
 
-#info {
+/*#info {
   color: #FFFFFF;
   font-size: 2em;
   margin-top: 10px;
   text-transform: uppercase;
   text-align: center;
+}*/
+
+#gestures-zone.doubletap {
+  -webkit-animation: tap 1.5s 1;
+}
+
+#gestures-zone.press {
+  -webkit-animation: press 1.5s 1;
+}
+
+#gestures-zone.swipe-left {
+  -webkit-animation: swipe-left 1.5s 1;
+}
+
+#gestures-zone.swipe-right {
+  -webkit-animation: swipe-right 1.5s 1;
+}
+
+#gestures-zone.rotate {
+  -webkit-animation: rotate 1.5s 1;
+}
+
+@-webkit-keyframes tap {
+  0%, 100% {
+    background: #FFC107
+  }
+  50% {
+    background: #FFECB3;
+  }
+}
+
+@-webkit-keyframes press {
+  0%, 100% {
+    background: #FFC107
+  }
+  50% {
+    background: #FFA000;
+  }
+}
+
+@-webkit-keyframes swipe-left {
+  0%, 100% {
+    width: 100%;
+  }
+  50% {
+    width: 0;
+  }
+}
+
+@-webkit-keyframes swipe-right {
+  0%, 100% {
+    margin-left: 0;
+  }
+  50% {
+    margin-left: 100%;
+  }
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
 }
