@@ -17,8 +17,16 @@ body.light {
   background: #FFECB3;
 }
 
+body.light-animation {
+  -webkit-animation: dark-to-light-transition 1.5s 1;
+}
+
 body.dark {
   background: #FFA000;
+}
+
+body.dark-animation {
+  -webkit-animation: light-to-dark-transition 1.5s 1;
 }
 
 button {
@@ -106,5 +114,23 @@ button {
 @-webkit-keyframes rotate {
   100% {
     -webkit-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes light-to-dark-transition {
+  0% {
+    background: #FFECB3;
+  }
+  100% {
+    background: #FFA000;
+  }
+}
+
+@-webkit-keyframes dark-to-light-transition {
+  0% {
+    background: #FFA000;
+  }
+  100% {
+    background: #FFECB3;
   }
 }

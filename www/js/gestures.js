@@ -8,8 +8,15 @@ class Gestures {
   initButtons() {
     const lightButton = document.getElementById('lightBtn');
     const darkButton = document.getElementById('darkBtn');
-    lightButton.addEventListener('click', () => { this.changeBodyColor('light'); });
-    darkButton.addEventListener('click', () => { this.changeBodyColor('dark'); });
+    lightButton.addEventListener('click', () => { this.changeBodyColor('light-animation'); });
+    darkButton.addEventListener('click', () => { this.changeBodyColor('dark-animation'); });
+    document.body.addEventListener('webkitAnimationEnd', (e) => {
+      if (document.body.className === 'light-animation') {
+        this.changeBodyColor('light');
+      } else if (document.body.className === 'dark-animation') {
+        this.changeBodyColor('dark');
+      }
+    });
   }
 
   initFastClick() {
