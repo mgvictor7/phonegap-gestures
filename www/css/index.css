@@ -27,6 +27,22 @@ button {
   width: 100%;
   border: 0;
   padding: 30px;
-  font-size: 3em;
+  font-size: 2em;
   margin-top: 10px
+}
+
+#gestures-zone {
+  width: 100%;
+  background: #03A9F4;
+  margin-top: 10px;
+  min-height: 300px;
+  display: block;
+}
+
+#info {
+  color: #FFFFFF;
+  font-size: 2em;
+  margin-top: 10px;
+  text-transform: uppercase;
+  text-align: center;
 }
