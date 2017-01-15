@@ -38,7 +38,7 @@ class Gestures {
       gesturesZone.className = '';
     });
 
-    hammer.on('doubletap press swipe rotate', (e) => {
+    hammer.on('doubletap press swipe rotate tap', (e) => {
       switch (e.type) {
         case 'swipe':
           if (e.direction === 2) {
@@ -59,9 +59,10 @@ class Gestures {
     });
   }
 
-
   changeBodyColor(classColor) {
-    document.body.className = classColor;
+    if (!classColor.includes(document.body.className) || document.body.className === '') {
+      document.body.className = classColor;
+    }
   }
 };
 

@@ -75,6 +75,10 @@ button {
   -webkit-animation: rotate 1.5s 1;
 }
 
+#gestures-zone.tap {
+  -webkit-animation: tap 0.1s 1;
+}
+
 @-webkit-keyframes tap {
   0%, 100% {
     background: #FFC107
@@ -132,5 +136,11 @@ button {
   }
   100% {
     background: #FFECB3;
+  }
+}
+
+@-webkit-keyframes tap {
+  0% {
+    background: #03A9F4;
   }
 }
